@@ -3,55 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EOTC Hymns - Support</title>
+    <title>Support | EOTC Hymns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <style>
-        /* Modern, clean styling */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 650px; margin: 0 auto; padding: 40px 20px; background-color: #f4f7f9; }
-        .container { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        h1 { color: #1a2a3a; margin-top: 0; font-size: 24px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-        h2 { color: #2c3e50; font-size: 18px; margin-top: 30px; }
-        p { color: #555; }
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .support-card {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .header { text-align: center; margin-bottom: 32px; }
         
-        /* Button styling */
-        .btn { display: inline-block; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s; margin-top: 10px; }
-        .btn:hover { background: #0056b3; }
+        /* App Icon Placeholder - You can add your logo img here */
+        .logo-circle {
+            width: 64px; height: 64px; background: var(--primary);
+            border-radius: 16px; margin: 0 auto 16px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 24px;
+        }
+
+        h1 { font-size: 24px; font-weight: 700; margin: 0; color: #0f172a; }
+        p.subtitle { color: var(--text-light); font-size: 15px; margin-top: 8px; }
+
+        .faq-section { margin-top: 32px; }
+        .faq-item { margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
+        .faq-item:last-child { border: none; }
+        .question { font-weight: 600; font-size: 16px; display: block; margin-bottom: 8px; color: var(--primary); }
+        .answer { font-size: 14px; line-height: 1.6; color: var(--text-light); margin: 0; }
+
+        /* Form Styling */
+        form { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+        input, textarea {
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
         
-        /* FAQ styling */
-        .faq-item { margin-bottom: 25px; }
-        .question { font-weight: bold; color: #007bff; display: block; margin-bottom: 5px; }
-        .answer { color: #444; }
-        
-        footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #888; }
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.1s, background 0.2s;
+        }
+        button:hover { background: #1d4ed8; }
+        button:active { transform: scale(0.98); }
+
+        footer { text-align: center; margin-top: 24px; font-size: 12px; color: #94a3b8; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>EOTC Hymns Support</h1>
-    <p>Welcome to the support center. We are dedicated to providing the best experience for our community. If you can't find your answer below, please reach out to us.</p>
-
-    <h2>Frequently Asked Questions</h2>
-    
-    <div class="faq-item">
-        <span class="question">How do I suggest a new hymn?</span>
-        <p class="answer">You can submit suggestions directly through the app. Please provide the title and lyrics; our team will review the submission, and it will be added to the library as soon as possible.</p>
+<div class="support-card">
+    <div class="header">
+        <div class="logo-circle">E</div>
+        <h1>EOTC Hymns Support</h1>
+        <p class="subtitle">How can we help you today?</p>
     </div>
 
-    <div class="faq-item">
-        <span class="question">I found a typo in a hymn. How can I report it?</span>
-        <p class="answer">Accuracy is very important to us. Please email us with the name of the hymn and the correction, or use the "Report" button within the app.</p>
+    <div class="faq-section">
+        <div class="faq-item">
+            <span class="question">How do I suggest a new hymn?</span>
+            <p class="answer">You can submit suggestions directly through the app. Please provide the title and lyrics; our team will review the submission, and it will be added to the library as soon as possible.</p>
+        </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email (e.g. name@gmail.com)" required>
+        <textarea name="message" rows="4" placeholder="Describe your issue or suggestion..." required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
-    <h2>Still need help?</h2>
-    <p>If you're experiencing technical issues or have other questions, send us an email and we'll get back to you quickly.</p>
-    <a href="mailto:eotchymns@gmail.com" class="btn">Email Support Team</a>
+    <footer>&copy; 2026 EOTC Hymns · All rights reserved.</footer>
 </div>
-
-<footer>
-    &copy; 2025 EOTC Hymns App
-</footer>
 
 </body>
 </html>
