@@ -14,6 +14,7 @@
             --text-main: #0f172a;
             --text-muted: #64748b;
             --card-bg: #ffffff;
+            --border: rgba(0,0,0,0.05);
         }
 
         @media (prefers-color-scheme: dark) {
@@ -22,7 +23,10 @@
                 --text-main: #f1f5f9;
                 --text-muted: #94a3b8;
                 --card-bg: #1e293b;
+                --border: rgba(255,255,255,0.05);
             }
+            /* Makes the black TikTok logo white in dark mode */
+            .tiktok-logo { filter: invert(1); }
         }
 
         body {
@@ -65,21 +69,23 @@
         h1 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 18px; line-height: 1.1; }
         .hero p { font-size: 20px; color: var(--text-muted); margin-bottom: 40px; }
 
-        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
+        .store-badge { height: 48px; transition: transform 0.2s; }
+        .store-badge:hover { transform: scale(1.05); }
 
-        .btn {
-            padding: 16px 32px;
+        .btn-secondary { 
+            display: inline-block;
+            background: var(--card-bg); 
+            color: var(--text-main); 
+            border: 1px solid var(--border);
+            padding: 10px 20px;
             border-radius: 12px;
-            font-weight: 700;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
             transition: all 0.2s;
         }
-
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
-        .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
-
-        .btn-secondary { background: var(--card-bg); color: var(--text-main); border: 1px solid rgba(0,0,0,0.1); }
-        .btn-secondary:hover { background: var(--primary-soft); }
+        .btn-secondary:hover { background: var(--primary-soft); transform: translateY(-2px); }
 
         .features {
             display: grid;
@@ -94,17 +100,43 @@
             background: var(--card-bg);
             padding: 32px;
             border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
         }
 
         .feature-card h3 { margin-top: 0; color: var(--primary); }
 
+        /* Social Section Styling */
+        .social-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 24px;
+        }
+
+        .social-icon {
+            height: 28px;
+            width: auto;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .social-icon:hover {
+            opacity: 0.8;
+            transform: translateY(-3px);
+        }
+
         footer {
             text-align: center;
             padding: 60px 20px;
-            border-top: 1px solid rgba(0,0,0,0.05);
             font-size: 14px;
             color: var(--text-muted);
+            border-top: 1px solid var(--border);
         }
 
         @media (max-width: 600px) {
@@ -124,49 +156,53 @@
     </nav>
 
     <section class="hero">
-        <h1>EOTC Hymns,<br>Wherever You Are.</h1>
+        <h1>መዝሙረ ተዋሕዶ,<br>Wherever You Are.</h1>
         <p>
             EOTC Hymns is a simple, clean app for exploring and reading Ethiopian Orthodox Tewahedo Church hymns.
-            Browse by category, search by title, and keep the words close at church, at home, or on the go.
+            Keep the words close—at church, at home, or on the go.
         </p>
 
         <div class="cta-buttons">
             <a href="https://apps.apple.com/us/app/eotc-hymns/id6747408179" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" style="height: 48px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" class="store-badge">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.eotc_hymns_android" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 48px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge">
             </a>
         </div>
         
         <div style="margin-top: 24px;">
-            <a href="support.html" class="btn btn-secondary" style="font-size: 14px; padding: 10px 20px;">Need Help?</a>
+            <a href="support.html" class="btn btn-secondary">Need Help?</a>
         </div>
     </section>
 
     <section class="features">
         <div class="feature-card">
             <h3>📖 Read with Peace</h3>
-            <p>
-                A growing library of hymns (መዝሙር) organized by categories so you can find what you need quickly
-                for worship, practice, and personal prayer.
-            </p>
+            <p>A growing library of hymns (መዝሙር) organized by categories so you can find what you need quickly for worship and personal prayer.</p>
         </div>
 
         <div class="feature-card">
             <h3>✨ Simple & Beautiful</h3>
-            <p>
-                Clean design and comfortable typography that helps you focus on the hymn easy to follow,
-                easy to share, and made for everyday use.
-            </p>
+            <p>Clean design and comfortable typography that helps you focus on the hymn—easy to follow, easy to share, and made for everyday use.</p>
         </div>
 
         <div class="feature-card">
             <h3>✍️ Grow the Library</h3>
-            <p>
-                Missing a hymn? Submit lyrics directly in the app. Your suggestions help the community,
-                Sunday school teachers, and youth groups continue to grow.
-            </p>
+            <p>Missing a hymn? Submit lyrics directly in the app. Your suggestions help the community and Sunday school teachers continue to grow.</p>
+        </div>
+    </section>
+
+    <section class="social-section">
+        <h3>Join our Community</h3>
+        <p style="color: var(--text-muted);">Follow us for daily hymns, updates, and community highlights.</p>
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@eotc.hymns" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok" class="social-icon tiktok-logo">
+            </a>
+            <a href="https://www.instagram.com/eotchymns" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon">
+            </a>
         </div>
     </section>
 
