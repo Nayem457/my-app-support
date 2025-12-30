@@ -8,78 +8,110 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     <style>
         :root {
-            --primary: #2563eb;
+            /* Light Theme Variables */
             --bg: #f8fafc;
-            --text: #1e293b;
-            --text-light: #64748b;
+            --card-bg: #ffffff;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --input-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Theme Variables */
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --primary: #3b82f6;
+                --primary-hover: #60a5fa;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border: #334155;
+                --input-bg: #0f172a;
+            }
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            transition: background-color 0.3s ease;
         }
 
         .support-card {
-            background: white;
-            max-width: 500px;
+            background: var(--card-bg);
+            max-width: 480px;
             width: 100%;
             padding: 40px;
             border-radius: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: background-color 0.3s ease;
         }
 
         .header { text-align: center; margin-bottom: 32px; }
         
-        /* App Icon Placeholder - You can add your logo img here */
         .logo-circle {
-            width: 64px; height: 64px; background: var(--primary);
-            border-radius: 16px; margin: 0 auto 16px;
+            width: 56px; height: 56px; background: var(--primary);
+            border-radius: 14px; margin: 0 auto 16px;
             display: flex; align-items: center; justify-content: center;
             color: white; font-weight: bold; font-size: 24px;
         }
 
-        h1 { font-size: 24px; font-weight: 700; margin: 0; color: #0f172a; }
-        p.subtitle { color: var(--text-light); font-size: 15px; margin-top: 8px; }
+        h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.02em; }
+        p.subtitle { color: var(--text-muted); font-size: 15px; margin-top: 8px; }
 
         .faq-section { margin-top: 32px; }
-        .faq-item { margin-bottom: 24px; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
         .faq-item:last-child { border: none; }
-        .question { font-weight: 600; font-size: 16px; display: block; margin-bottom: 8px; color: var(--primary); }
-        .answer { font-size: 14px; line-height: 1.6; color: var(--text-light); margin: 0; }
+        .question { font-weight: 600; font-size: 15px; display: block; margin-bottom: 6px; color: var(--primary); }
+        .answer { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
 
         /* Form Styling */
-        form { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
+        form { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+        label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: -8px; margin-left: 4px; }
+        
         input, textarea {
+            background: var(--input-bg);
+            color: var(--text-main);
             padding: 12px 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
             font-size: 14px;
+            font-family: inherit;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.2s ease;
         }
-        input:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+
+        input:focus, textarea:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15); 
+        }
         
         button {
             background: var(--primary);
             color: white;
             padding: 14px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 600;
+            font-size: 15px;
             cursor: pointer;
-            transition: transform 0.1s, background 0.2s;
+            transition: all 0.2s ease;
+            margin-top: 8px;
         }
-        button:hover { background: #1d4ed8; }
-        button:active { transform: scale(0.98); }
 
-        footer { text-align: center; margin-top: 24px; font-size: 12px; color: #94a3b8; }
+        button:hover { background: var(--primary-hover); transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+
+        footer { text-align: center; margin-top: 32px; font-size: 12px; color: var(--text-muted); }
     </style>
 </head>
 <body>
@@ -88,7 +120,7 @@
     <div class="header">
         <div class="logo-circle">E</div>
         <h1>EOTC Hymns Support</h1>
-        <p class="subtitle">How can we help you today?</p>
+        <p class="subtitle">Suggestions or issues? Let us know.</p>
     </div>
 
     <div class="faq-section">
@@ -98,14 +130,22 @@
         </div>
     </div>
 
-    <form name="contact" method="POST" data-netlify="true">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email (e.g. name@gmail.com)" required>
-        <textarea name="message" rows="4" placeholder="Describe your issue or suggestion..." required></textarea>
+    <form name="support-contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="support-contact" />
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@gmail.com" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help..." required></textarea>
+        
         <button type="submit">Send Message</button>
     </form>
 
-    <footer>&copy; 2026 EOTC Hymns · All rights reserved.</footer>
+    <footer>&copy; 2025 EOTC Hymns</footer>
 </div>
 
 </body>
