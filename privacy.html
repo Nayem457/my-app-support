@@ -1,13 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Privacy Policy – EOTC Hymns</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | EOTC Hymns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #2563eb;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f172a;
+                --card-bg: #1e293b;
+                --primary: #3b82f6;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border: #334155;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .policy-card {
+            background: var(--card-bg);
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+        .last-updated { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; display: block; }
+        
+        h2 { font-size: 18px; font-weight: 600; margin-top: 32px; color: var(--primary); }
+        p { margin-bottom: 16px; color: var(--text-main); }
+        
+        .contact-box {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px dashed var(--border);
+        }
+
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+
+        footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-muted); }
+    </style>
 </head>
-<body style="font-family:sans-serif;line-height:1.6;padding:2rem;">
-  <h1>Privacy Policy</h1>
-  <p><strong>Last updated:</strong> July 2025</p>
-  <p>This app does not collect or store any personal data. All lyrics and content are stored locally on your device. For questions, email us at <a href="eotchymns@gmail.com">eotchymns@gmail.com</a>.</p>
+<body>
+
+<div class="policy-card">
+    <h1>Privacy Policy</h1>
+    <span class="last-updated">Last updated: July 2025</span>
+
+    <p>Your privacy is important to us. This policy explains how the <strong>EOTC Hymns</strong> app handles your data.</p>
+
+    <h2>Data Collection</h2>
+    <p>The EOTC Hymns app is designed to be fully private. <strong>We do not collect, store, or share any personal information.</strong> We do not track your location, access your contacts, or require a user account to use the app.</p>
+
+    <h2>Local Storage</h2>
+    <p>All app content, including hymns, favorites, and custom settings, is stored locally on your device. This data never leaves your phone and is not accessible by us.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>The app does not use third-party analytics or advertising frameworks that track user behavior.</p>
+
+    <div class="contact-box">
+        <strong>Questions?</strong><br>
+        If you have any questions regarding this policy, please reach out to us at: 
+        <a href="mailto:eotchymns@gmail.com">eotchymns@gmail.com</a>
+    </div>
+
+    <footer>&copy; 2025 EOTC Hymns</footer>
+</div>
+
 </body>
 </html>
